@@ -1,5 +1,7 @@
+import Providers from "./components/common/Providers";
+
 function App() {
-  return <div className="App"></div>;
+  return <Providers>asdad</Providers>;
 }
 
 export default App;
