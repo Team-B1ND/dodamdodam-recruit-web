@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { LAYOUT_WIDTH } from "../Layout/constant";
 
 export const FooterContainer = styled.div`
   width: 100%;
@@ -9,7 +10,7 @@ export const FooterContainer = styled.div`
 `;
 
 export const FooterWrap = styled.div`
-  width: 1200px;
+  width: ${LAYOUT_WIDTH}px;
   display: flex;
   align-items: center;
   justify-content: space-between;
