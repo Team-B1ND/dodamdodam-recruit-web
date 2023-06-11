@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { fontSize } from "../../../styles/fontSize";
+import { LAYOUT_WIDTH } from "../Layout/constant";
 
 export const Container = styled.header`
   width: 100%;
@@ -10,7 +11,7 @@ export const Container = styled.header`
 `;
 
 export const Wrap = styled.div`
-  width: 1040px;
+  width: ${LAYOUT_WIDTH}px;
   height: 100%;
   display: flex;
   align-items: center;

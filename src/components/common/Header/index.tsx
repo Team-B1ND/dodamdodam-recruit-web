@@ -2,9 +2,11 @@ import * as S from "./style";
 import Logo from "../../../assets/logo/logo.svg";
 import { useGetMyMemberQuery } from "../../../queries/member/queries";
 import DefaultProfileImg from "../../../assets/images/defaultProfile.png";
+import useLogout from "../../../hooks/useLogout";
 
 const Header = () => {
   const { data } = useGetMyMemberQuery();
+  const { onLogout } = useLogout();
 
   return (
     <S.Container>
@@ -19,7 +21,7 @@ const Header = () => {
         </S.LogoWrap>
         <S.AvatarWrap>
           <S.Avatar src={data?.data.member.profileImage || DefaultProfileImg} />
-          <S.LogoutButton>로그아웃</S.LogoutButton>
+          <S.LogoutButton onClick={onLogout}>로그아웃</S.LogoutButton>
         </S.AvatarWrap>
       </S.Wrap>
     </S.Container>
