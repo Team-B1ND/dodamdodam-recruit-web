@@ -9,6 +9,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  overflow: hidden;
 `;
 
 export const RecruitImage = styled.img`
@@ -25,10 +26,12 @@ export const DescriptionBox = styled.div`
   justify-content: center;
   row-gap: 10px;
   padding: 0px 20px;
+  background-color: #292c33;
 `;
 
 export const CompanyName = styled.h3`
   font-size: 18px;
+  color: white;
   font-weight: bold;
 `;
 
