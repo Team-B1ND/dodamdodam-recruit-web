@@ -5502,6 +5502,7 @@ __metadata:
     js-cookie: ^3.0.5
     react: ^18.2.0
     react-dom: ^18.2.0
+    react-intersection-observer: ^9.4.4
     react-is: ^18.2.0
     react-router-dom: ^6.12.0
     react-scripts: 5.0.1
@@ -10924,6 +10925,15 @@ __metadata:
   version: 6.0.11
   resolution: "react-error-overlay@npm:6.0.11"
   checksum: ce7b44c38fadba9cedd7c095cf39192e632daeccf1d0747292ed524f17dcb056d16bc197ddee5723f9dd888f0b9b19c3b486c430319e30504289b9296f2d2c42
+  languageName: node
+  linkType: hard
+
+"react-intersection-observer@npm:^9.4.4":
+  version: 9.4.4
+  resolution: "react-intersection-observer@npm:9.4.4"
+  peerDependencies:
+    react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+  checksum: 9d99396b4457ad73952c2ce77442f4b67ca3ff79d29fabd9da17785777c93092c233246b208509e01b7c4beadd79db7bb033ba1ee763fd7d9a5471800a89f4dd
   languageName: node
   linkType: hard
 
