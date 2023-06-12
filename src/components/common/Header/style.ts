@@ -8,6 +8,11 @@ export const Container = styled.header`
   display: flex;
   justify-content: center;
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 3;
+  background-color: white;
 `;
 
 export const Wrap = styled.div`

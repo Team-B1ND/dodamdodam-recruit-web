@@ -5,5 +5,6 @@ export const QUERY_KEYS = Object.freeze({
   recruit: {
     getRecruitsByPage: "recruit/getRecruitsByPage",
     getRecentRecruits: "recruit/getRecentRecruits",
+    getRecruit: (id: number) => ["recruit/getRecruit", id],
   },
 });

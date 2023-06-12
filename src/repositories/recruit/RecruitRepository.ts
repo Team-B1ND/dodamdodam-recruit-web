@@ -6,7 +6,9 @@ export interface RecruitRepository {
     page,
   }: GetRecruitsByPageParam): Promise<GetRecruitsByPageResponse>;
 
-  getRecentRecruits() : Promise<GetRecentRecruitsResponse>;
+  getRecentRecruits(): Promise<GetRecentRecruitsResponse>;
+
+  getRecruit({ id }: GetRecruitParam): Promise<GetRecruitResponse>;
 }
 
 export interface GetRecruitsByPageParam {
@@ -22,4 +24,12 @@ export interface GetRecruitsByPageResponse extends Response {
 
 export interface GetRecentRecruitsResponse extends Response {
   data: Recruit[];
+}
+
+export interface GetRecruitParam {
+  id: number;
+}
+
+export interface GetRecruitResponse extends Response {
+  data: Recruit;
 }

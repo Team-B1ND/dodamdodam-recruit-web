@@ -3,10 +3,12 @@ import Logo from "../../../assets/logo/logo.svg";
 import { useGetMyMemberQuery } from "../../../queries/member/queries";
 import DefaultProfileImg from "../../../assets/images/defaultProfile.png";
 import useLogout from "../../../hooks/useLogout";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const { data } = useGetMyMemberQuery();
   const { onLogout } = useLogout();
+  const navigate = useNavigate();
 
   return (
     <S.Container>
@@ -15,7 +17,7 @@ const Header = () => {
           <S.Logo
             src={Logo}
             alt="dodam recruit logo"
-            onClick={() => (window.location.href = "https://dodam.b1nd.com/")}
+            onClick={() => navigate("/")}
           />
           <S.LogoText>리크루트</S.LogoText>
         </S.LogoWrap>

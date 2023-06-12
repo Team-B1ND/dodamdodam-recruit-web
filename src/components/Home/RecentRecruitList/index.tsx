@@ -1,17 +1,22 @@
-import { useGetRecentRecruits } from "../../../queries/recruit/queries";
+import { useGetRecentRecruitsQuery } from "../../../queries/recruit/queries";
+import { Recruit } from "../../../types/recruit/types";
+import { LAYOUT_WIDTH } from "../../common/Layout/constant";
+import List from "../../common/List";
 import RecentRecruitItem from "../RecentRecruitItem";
 import * as S from "./style";
 
 const RecentRecruitList = () => {
-  const { data } = useGetRecentRecruits({ suspense: true });
+  const { data } = useGetRecentRecruitsQuery({ suspense: true });
 
   return (
     <S.Container>
-      <S.Wrap>
-        {data?.data.map((item) => (
-          <RecentRecruitItem {...item} key={item.id} />
-        ))}
-      </S.Wrap>
+      <List
+        articles={data!.data.map((item) => item)}
+        renderListItem={(article: Recruit) => (
+          <RecentRecruitItem {...article} key={article.id} />
+        )}
+        customStyle={{ width: LAYOUT_WIDTH, columnGap: 20 }}
+      />
     </S.Container>
   );
 };

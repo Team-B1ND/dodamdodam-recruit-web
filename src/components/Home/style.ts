@@ -52,7 +52,7 @@ export const DescriptionTitle = styled.h2`
 `;
 
 export const DescriptionSubTitle = styled.h3`
-  fontsize: 18px;
+  font-size: 16px;
   color: #666;
   margin-top: 10px;
 `;
