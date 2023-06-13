@@ -21,7 +21,7 @@ const Providers = ({ children }: ProvidersProps) => {
     <>
       <QueryClientProvider client={queryClient}>
         <GlobalStyle />
-        <BrowserRouter>{children}</BrowserRouter>
+        <BrowserRouter basename="/recruit">{children}</BrowserRouter>
       </QueryClientProvider>
     </>
   );
