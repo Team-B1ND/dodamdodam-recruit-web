@@ -5,6 +5,7 @@ export const Container = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  padding-top: 60px;
 `;
 
 export const Wrap = styled.main`

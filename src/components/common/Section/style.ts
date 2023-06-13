@@ -8,8 +8,10 @@ export const Container = styled.div<{
   width: ${({ width }) => width};
   height: ${({ height }) => height};
   margin: 20px 0px;
+  display: flex;
+  flex-direction: column;
 
-  ${({ customStyle }) => customStyle}
+  ${({ customStyle }) => customStyle};
 `;
 
 export const Title = styled.h2<{
@@ -25,10 +27,11 @@ export const Title = styled.h2<{
 export const SubTitle = styled.h3<{
   customStyle?: CSSObject;
 }>`
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #666;
 
   ${({ customStyle }) => customStyle}
 `;

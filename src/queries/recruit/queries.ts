@@ -8,6 +8,8 @@ import { QUERY_KEYS } from "../queryKey";
 import RecruitRepositoryImpl from "../../repositories/recruit/RecruitRepositoryImpl";
 import {
   GetRecentRecruitsResponse,
+  GetRecruitParam,
+  GetRecruitResponse,
   GetRecruitsByPageResponse,
 } from "../../repositories/recruit/RecruitRepository";
 import { AxiosError } from "axios";
@@ -34,7 +36,7 @@ export const useGetRecruitsByPageQuery = (
     }
   );
 
-export const useGetRecentRecruits = (
+export const useGetRecentRecruitsQuery = (
   options?: UseQueryOptions<
     GetRecentRecruitsResponse,
     AxiosError,
@@ -48,4 +50,19 @@ export const useGetRecentRecruits = (
     {
       ...options,
     }
+  );
+
+export const useGetRecruitQuery = (
+  { id }: GetRecruitParam,
+  options?: UseQueryOptions<
+    GetRecruitResponse,
+    AxiosError,
+    GetRecruitResponse,
+    (string | number)[]
+  >
+) =>
+  useQuery(
+    QUERY_KEYS.recruit.getRecruit(id),
+    () => RecruitRepositoryImpl.getRecruit({ id }),
+    { ...options }
   );
