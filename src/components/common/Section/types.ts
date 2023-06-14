@@ -2,8 +2,8 @@ import { CSSObject } from "styled-components";
 import { CommonComponentProps } from "../common.type";
 
 export interface SectionProps extends CommonComponentProps {
-  width?: CSSObject["width"];
-  height?: CSSObject["height"];
+  width?: number;
+  height?: number;
 }
 
 export interface SectionTitleProps extends CommonComponentProps {}

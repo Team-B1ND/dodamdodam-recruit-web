@@ -10,13 +10,19 @@ const RecentRecruitList = () => {
 
   return (
     <S.Container>
-      <List
-        articles={data!.data.map((item) => item)}
-        renderListItem={(article: Recruit) => (
-          <RecentRecruitItem {...article} key={article.id} />
-        )}
-        customStyle={{ width: LAYOUT_WIDTH, columnGap: 20 }}
-      />
+      {data?.data.length === 0 ? (
+        <S.EmptyWrap>
+          <S.EmptyWrap>현재 채용공고가 존재하지 않아요 😭</S.EmptyWrap>
+        </S.EmptyWrap>
+      ) : (
+        <List
+          articles={data!.data.map((item) => item)}
+          renderListItem={(article: Recruit) => (
+            <RecentRecruitItem {...article} key={article.id} />
+          )}
+          customStyle={{ width: LAYOUT_WIDTH, columnGap: 20 }}
+        />
+      )}
     </S.Container>
   );
 };

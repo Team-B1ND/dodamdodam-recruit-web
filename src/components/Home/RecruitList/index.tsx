@@ -21,15 +21,21 @@ const RecruitList = () => {
   return (
     <>
       <S.Container>
-        <List
-          customStyle={{ width: LAYOUT_WIDTH, gap: 20, marginTop: 10 }}
-          articles={data!.pages
-            .map((page) => page.data.recruit.map((recruit) => recruit))
-            .flat(1)}
-          renderListItem={(article: Recruit) => (
-            <RecruitItem {...article} key={article.id} />
-          )}
-        />
+        {data?.pages.map((page) =>
+          page.data.recruit.map((recruit) => recruit).flat(1).length === 0 ? (
+            <S.EmptyWrap>현재 채용공고가 존재하지 않아요 😭</S.EmptyWrap>
+          ) : (
+            <List
+              customStyle={{ width: LAYOUT_WIDTH, gap: 20, marginTop: 10 }}
+              articles={data!.pages
+                .map((page) => page.data.recruit.map((recruit) => recruit))
+                .flat(1)}
+              renderListItem={(article: Recruit) => (
+                <RecruitItem {...article} key={article.id} />
+              )}
+            />
+          )
+        )}
       </S.Container>
       <S.SeeMoreWrap ref={ref}>더보기</S.SeeMoreWrap>
     </>

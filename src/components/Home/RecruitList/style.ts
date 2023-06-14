@@ -11,3 +11,14 @@ export const SeeMoreWrap = styled.div`
   display: flex;
   justify-content: center;
 `;
+
+export const EmptyWrap = styled.div`
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+`;

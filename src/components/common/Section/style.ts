@@ -1,12 +1,12 @@
 import styled, { CSSObject } from "styled-components";
 
 export const Container = styled.div<{
-  width: CSSObject["width"];
-  height: CSSObject["height"];
+  width?: number;
+  height?: number;
   customStyle?: CSSObject;
 }>`
-  width: ${({ width }) => width};
-  height: ${({ height }) => height};
+  width: ${({ width }) => `${width}px` || "100%"};
+  height: ${({ height }) => `${height}px`};
   margin: 20px 0px;
   display: flex;
   flex-direction: column;
