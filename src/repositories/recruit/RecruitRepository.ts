@@ -1,13 +1,8 @@
-import { Recruit } from "../../types/recruit/types";
+import { recruitList } from "../../types/recruit/types";
 import { Response } from "../../types/util/response.type";
 
 export interface RecruitRepository {
-  getRecruitsByPage({
-    page,
-  }: GetRecruitsByPageParam): Promise<GetRecruitsByPageResponse>;
-
-  getRecentRecruits(): Promise<GetRecentRecruitsResponse>;
-
+  getRecruitList(page: number): Promise<GetRecruitsByPageResponse>;
   getRecruit({ id }: GetRecruitParam): Promise<GetRecruitResponse>;
 }
 
@@ -17,13 +12,24 @@ export interface GetRecruitsByPageParam {
 
 export interface GetRecruitsByPageResponse extends Response {
   data: {
-    nextPage: number;
-    recruit: Recruit[];
+    recruitList: [
+      {
+        id: number;
+        writer: string;
+        name: string;
+        location: string;
+        duty: string;
+        etc: string;
+        personnel: number;
+        image: string;
+      }
+    ];
+    nextPage: null;
   };
 }
 
 export interface GetRecentRecruitsResponse extends Response {
-  data: Recruit[];
+  data: recruitList[];
 }
 
 export interface GetRecruitParam {
@@ -31,5 +37,5 @@ export interface GetRecruitParam {
 }
 
 export interface GetRecruitResponse extends Response {
-  data: Recruit;
+  data: recruitList;
 }

@@ -11,10 +11,11 @@ export const Container = styled.div`
 
 export const RecruitImg = styled.img`
   width: 100%;
-  height: 120px;
+  height: 168px;
+
   object-fit: cover;
   border: 1px solid #f0eff2;
-  border-radius: 5px;
+  border-radius: 12px;
 `;
 
 export const CompanyName = styled.h3`
@@ -34,5 +35,5 @@ export const EtcContent = styled.p`
 export const Writer = styled.p`
   font-size: 16px;
   color: #999;
-  margin-top: auto;
+  margin-top: 10px;
 `;

@@ -31,7 +31,6 @@ const Home = () => {
         </Suspense>
       </Section>
       <Section width={LAYOUT_WIDTH}>
-        <Section.Title>현재 채용 중인 회사</Section.Title>
         <Suspense fallback={<>로딩중...</>}>
           <RecruitList />
         </Suspense>

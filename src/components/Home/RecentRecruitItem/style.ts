@@ -14,13 +14,12 @@ export const Container = styled.div`
 
 export const RecruitImage = styled.img`
   width: 100%;
-  height: 54%;
-  object-fit: cover;
+  height: 150px;
 `;
 
 export const DescriptionBox = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;

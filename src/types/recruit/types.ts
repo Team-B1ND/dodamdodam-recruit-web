@@ -1,11 +1,10 @@
-import { Member } from "../member/types";
-
-export interface Recruit {
-  readonly id: number;
-  writer: Member;
-  image: string;
+export interface recruitList {
+  id: number;
+  writer: string;
+  name: string;
+  location: string;
+  duty: string;
   etc: string;
-  viewCount: number;
-  createdDate: string;
-  companyName: string;
+  personnel: number;
+  image: string;
 }
