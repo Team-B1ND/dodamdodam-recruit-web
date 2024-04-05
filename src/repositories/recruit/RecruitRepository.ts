@@ -3,7 +3,7 @@ import { Response } from "../../types/util/response.type";
 
 export interface RecruitRepository {
   getRecruitList(page: number): Promise<GetRecruitsByPageResponse>;
-  getRecruit({ id }: GetRecruitParam): Promise<GetRecruitResponse>;
+  getRecruit({ id }: GetRecruitParam): Promise<GetRecruitResponese>;
 }
 
 export interface GetRecruitsByPageParam {
@@ -28,6 +28,24 @@ export interface GetRecruitsByPageResponse extends Response {
   };
 }
 
+export interface GetRecruitResponese extends Response {
+  data: {
+    writer: string;
+    name: string;
+    location: string;
+    duty: string;
+    etc: string;
+    personnel: number;
+    image: string;
+    pdfs: RecruitPdfParam[];
+  };
+}
+
+export interface RecruitPdfParam {
+  url: string;
+  name: string;
+}
+
 export interface GetRecentRecruitsResponse extends Response {
   data: recruitList[];
 }
@@ -36,6 +54,6 @@ export interface GetRecruitParam {
   id: number;
 }
 
-export interface GetRecruitResponse extends Response {
-  data: recruitList;
-}
+// export interface GetRecruitResponse extends Response {
+//   data: recruitList;
+// }

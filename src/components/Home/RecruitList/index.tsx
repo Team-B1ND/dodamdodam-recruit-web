@@ -4,6 +4,8 @@ import List from "../../common/List";
 import { recruitList } from "../../../types/recruit/types";
 import { LAYOUT_WIDTH } from "../../common/Layout/constant";
 import { useGetRecruitListQuery } from "../../../queries/recruit/queries";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 const RecruitList = () => {
   const { data } = useGetRecruitListQuery(1, { suspense: true });

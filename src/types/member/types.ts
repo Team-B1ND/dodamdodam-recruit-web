@@ -15,6 +15,20 @@ export interface ClassRoom {
   readonly room: number;
 }
 
+export interface Student {
+  id: number;
+  name: string;
+  grade: number;
+  room: number;
+  number: number;
+}
+
+export interface Teacher {
+  id: number;
+  tel: string;
+  position: string;
+}
+
 export type MemberRole = "STUDENT" | "TEACHER" | "ADMIN";
 
 export type MemberStatus = "ACTIVE" | "DEACTIVATED";

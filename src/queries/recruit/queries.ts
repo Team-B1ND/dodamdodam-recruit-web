@@ -3,7 +3,7 @@ import { QUERY_KEYS } from "../queryKey";
 import RecruitRepositoryImpl from "../../repositories/recruit/RecruitRepositoryImpl";
 import {
   GetRecruitParam,
-  GetRecruitResponse,
+  GetRecruitResponese,
   GetRecruitsByPageResponse,
 } from "../../repositories/recruit/RecruitRepository";
 import { AxiosError } from "axios";
@@ -26,9 +26,9 @@ export const useGetRecruitListQuery = (
 export const useGetRecruitQuery = (
   { id }: GetRecruitParam,
   options?: UseQueryOptions<
-    GetRecruitResponse,
+    GetRecruitResponese,
     AxiosError,
-    GetRecruitResponse,
+    GetRecruitResponese,
     (string | number)[]
   >
 ) =>

@@ -7,7 +7,6 @@ import Section from "../common/Section";
 import { LAYOUT_WIDTH } from "../common/Layout/constant";
 import { useGetMyMemberQuery } from "../../queries/member/queries";
 import RecruitDetailContent from "./RecruitDetailContent";
-import DescriptionBox from "./DescriptionBox";
 
 const RecruitDetail = () => {
   const { data } = useGetMyMemberQuery();
@@ -20,7 +19,7 @@ const RecruitDetail = () => {
       <Section width={LAYOUT_WIDTH}>
         <Section.Title>최근 채용 중인 회사</Section.Title>
         <Section.SubTitle>
-          {data?.data.member.name}님, 최근에 올라온 공고에요!
+          {data?.data.name}님, 최근에 올라온 공고에요!
         </Section.SubTitle>
         <Suspense fallback={<>로딩중...</>}>
           <RecentRecruitList />
@@ -36,8 +35,7 @@ const RecruitDetailWrap = () => {
 
   return (
     <S.Wrap>
-      <RecruitDetailContent {...data!.data} />
-      <DescriptionBox {...data!.data} />
+      <RecruitDetailContent {...data!} />
     </S.Wrap>
   );
 };

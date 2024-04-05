@@ -1,4 +1,9 @@
-import { ClassRoom, Member } from "../../types/member/types";
+import {
+  MemberRole,
+  MemberStatus,
+  Student,
+  Teacher,
+} from "../../types/member/types";
 import { Response } from "../../types/util/response.type";
 
 export interface MemberRepository {
@@ -7,10 +12,16 @@ export interface MemberRepository {
 
 export interface GetMyMemberResponse extends Response {
   data: {
-    classroom: ClassRoom;
-    id: number;
-    member: Member;
-    number: number;
+    id: string;
+    name: string;
+    email: string;
+    role: MemberRole;
+    status: MemberStatus;
+    profileImage: string;
     phone: string;
+    student: Student;
+    teacher: Teacher;
+    createdAt: string;
+    modifiedAt: string;
   };
 }

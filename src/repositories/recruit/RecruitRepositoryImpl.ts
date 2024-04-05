@@ -1,7 +1,7 @@
 import { customAxios } from "../../libs/axios/customAxios";
 import {
   GetRecruitParam,
-  GetRecruitResponse,
+  GetRecruitResponese,
   GetRecruitsByPageResponse,
   RecruitRepository,
 } from "./RecruitRepository";
@@ -16,7 +16,7 @@ class RecruitRepositoryImpl implements RecruitRepository {
 
   public async getRecruit({
     id,
-  }: GetRecruitParam): Promise<GetRecruitResponse> {
+  }: GetRecruitParam): Promise<GetRecruitResponese> {
     const { data } = await customAxios.get(`/recruit/${id}`);
     return data;
   }
