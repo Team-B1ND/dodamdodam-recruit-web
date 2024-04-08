@@ -175,4 +175,15 @@ export const Inquiry = styled.div`
 
 export const MapBox = styled.div`
   margin-bottom: 20px;
+
+  border-radius: 10px;
+
+  width: 600px;
+  height: 320px;
+
+  border: 0.5px solid #dcdcdd;
+`;
+
+export const MapList = styled.div`
+  padding: 22px 0px 0px 25px;
 `;

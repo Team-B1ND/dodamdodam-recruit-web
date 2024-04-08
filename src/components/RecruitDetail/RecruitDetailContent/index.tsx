@@ -1,15 +1,22 @@
 import * as S from "./style";
 import { FiAlertCircle } from "@react-icons/all-files/fi/FiAlertCircle";
 import { RiComputerFill } from "react-icons/ri";
-
 import { IoPerson } from "react-icons/io5";
 import { GetRecruitResponese } from "../../../repositories/recruit/RecruitRepository";
-
 import { Map, MapMarker } from "react-kakao-maps-sdk";
+import { useMap } from "../../../hooks/useMap";
+import { useEffect } from "react";
 
 interface Props extends GetRecruitResponese {}
 
 const RecruitDetailContent = (data: Props) => {
+  const { SetSearchAddress, searchAddress, SearchMap, state } = useMap();
+
+  useEffect(() => {
+    SetSearchAddress(data.data.location);
+    SearchMap();
+  }, [searchAddress]);
+
   return (
     <S.CompanyContainer>
       <S.ImageContainer>
@@ -41,19 +48,18 @@ const RecruitDetailContent = (data: Props) => {
           <S.Title>회사 위치</S.Title>
           <S.MapBox>
             <Map
-              center={{ lat: 33.5563, lng: 126.79581 }}
+              center={state.center}
               style={{
-                width: "500px",
+                width: "600px",
                 height: "260px",
                 borderRadius: "10px",
                 border: "0.5px solid #E8E8EA",
               }}
               level={3}
             >
-              <MapMarker
-                position={{ lat: 33.55635, lng: 126.795841 }}
-              ></MapMarker>
+              <MapMarker position={state.center}></MapMarker>
             </Map>
+            <S.MapList>{data.data.location}</S.MapList>
           </S.MapBox>
         </S.CompanyInfoBox>
 
