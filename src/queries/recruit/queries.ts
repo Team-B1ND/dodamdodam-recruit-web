@@ -1,4 +1,9 @@
-import { UseQueryOptions, useQuery } from "@tanstack/react-query";
+import {
+  UseInfiniteQueryOptions,
+  UseQueryOptions,
+  useInfiniteQuery,
+  useQuery,
+} from "@tanstack/react-query";
 import { QUERY_KEYS } from "../queryKey";
 import RecruitRepositoryImpl from "../../repositories/recruit/RecruitRepositoryImpl";
 import {
@@ -20,7 +25,10 @@ export const useGetRecruitListQuery = (
   useQuery(
     QUERY_KEYS.recruit.getRecruitsByPage(page),
     () => RecruitRepositoryImpl.getRecruitList(page),
-    { ...options }
+
+    {
+      ...options,
+    }
   );
 
 export const useGetRecruitQuery = (

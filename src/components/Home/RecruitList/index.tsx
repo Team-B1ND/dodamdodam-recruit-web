@@ -4,19 +4,11 @@ import List from "../../common/List";
 import { recruitList } from "../../../types/recruit/types";
 import { LAYOUT_WIDTH } from "../../common/Layout/constant";
 import { useGetRecruitListQuery } from "../../../queries/recruit/queries";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { useState } from "react";
 
 const RecruitList = () => {
-  const { data } = useGetRecruitListQuery(1, { suspense: true });
-
-  // const { ref, inView } = useInView();
-
-  // useEffect(() => {
-  //   if (inView) {
-  //     fetchNextPage();
-  //   }
-  // }, [inView]);
+  const [state, setState] = useState(1);
+  const { data } = useGetRecruitListQuery(state, { suspense: true });
 
   return (
     <>
@@ -35,7 +27,12 @@ const RecruitList = () => {
           </S.EmptyWrap>
         )}
       </S.Container>
-      {/* <S.SeeMoreWrap ref={ref}>더보기</S.SeeMoreWrap> */}
+      <S.SeeMoreWrap
+        disabled={data && data?.data.recruitList.length <= 10}
+        onClick={() => setState(state + 1)}
+      >
+        더보기
+      </S.SeeMoreWrap>
     </>
   );
 };
