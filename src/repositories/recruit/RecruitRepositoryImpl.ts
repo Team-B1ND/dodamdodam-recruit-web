@@ -8,9 +8,12 @@ import {
 
 class RecruitRepositoryImpl implements RecruitRepository {
   public async getRecruitList(
-    page: number
+    page: number,
+    size: number
   ): Promise<GetRecruitsByPageResponse> {
-    const { data } = await customAxios.get(`/recruit?page=${page}`);
+    const { data } = await customAxios.get(
+      `/recruit?page=${page}&size=${size}`
+    );
     return data;
   }
 

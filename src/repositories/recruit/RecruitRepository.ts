@@ -2,7 +2,10 @@ import { recruitList } from "../../types/recruit/types";
 import { Response } from "../../types/util/response.type";
 
 export interface RecruitRepository {
-  getRecruitList(page: number): Promise<GetRecruitsByPageResponse>;
+  getRecruitList(
+    page: number,
+    size: number
+  ): Promise<GetRecruitsByPageResponse>;
   getRecruit({ id }: GetRecruitParam): Promise<GetRecruitResponese>;
 }
 

@@ -8,7 +8,7 @@ import { useState } from "react";
 
 const RecruitList = () => {
   const [state, setState] = useState(1);
-  const { data } = useGetRecruitListQuery(state, { suspense: true });
+  const { data } = useGetRecruitListQuery(state, 10, { suspense: true });
 
   return (
     <>

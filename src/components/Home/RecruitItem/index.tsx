@@ -11,6 +11,7 @@ const RecruitItem = (data: Props) => {
     <S.Container onClick={() => navigate(`/${data.id}`)}>
       <S.RecruitImg src={data.image} alt={`${data.name} img`} />
       <S.CompanyName>{data.name}</S.CompanyName>
+      <S.Job>{data.duty}</S.Job>
       <S.Writer>{data.writer}</S.Writer>
     </S.Container>
   );

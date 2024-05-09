@@ -13,15 +13,22 @@ export const RecruitImg = styled.img`
   width: 100%;
   height: 168px;
 
-  object-fit: cover;
-  border: 1px solid #f0eff2;
+  object-fit: contain;
+  border: 1px solid #e4e3e7;
   border-radius: 12px;
 `;
 
 export const CompanyName = styled.h3`
-  font-size: 20px;
+  font-size: 14px;
+  color: #323438;
+
+  margin: 15px 0px 7px 2px; /*top right bottom left */
+`;
+
+export const Job = styled.div`
+  font-size: 18px;
   font-weight: bold;
-  margin-top: 20px;
+  margin-left: 2px;
 `;
 
 export const EtcContent = styled.p`
@@ -33,7 +40,9 @@ export const EtcContent = styled.p`
 `;
 
 export const Writer = styled.p`
-  font-size: 16px;
+  font-size: 12px;
   color: #999;
+
   margin-top: 10px;
+  margin-left: 2px;
 `;

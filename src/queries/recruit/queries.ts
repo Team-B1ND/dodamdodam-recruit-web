@@ -15,6 +15,7 @@ import { AxiosError } from "axios";
 
 export const useGetRecruitListQuery = (
   page: number,
+  size: number,
   options?: UseQueryOptions<
     GetRecruitsByPageResponse,
     AxiosError,
@@ -23,8 +24,8 @@ export const useGetRecruitListQuery = (
   >
 ) =>
   useQuery(
-    QUERY_KEYS.recruit.getRecruitsByPage(page),
-    () => RecruitRepositoryImpl.getRecruitList(page),
+    QUERY_KEYS.recruit.getRecruitsByPage(page, size),
+    () => RecruitRepositoryImpl.getRecruitList(page, size),
 
     {
       ...options,

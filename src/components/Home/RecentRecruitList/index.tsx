@@ -6,7 +6,7 @@ import RecentRecruitItem from "../RecentRecruitItem";
 import * as S from "./style";
 
 const RecentRecruitList = () => {
-  const { data } = useGetRecruitListQuery(1, { suspense: true });
+  const { data } = useGetRecruitListQuery(1, 5, { suspense: true });
 
   return (
     <S.Container>
