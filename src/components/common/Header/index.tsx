@@ -22,7 +22,6 @@ const Header = () => {
           <S.LogoText>리크루트</S.LogoText>
         </S.LogoWrap>
         <S.AvatarWrap>
-          {/* <S.Avatar src={data?.data.member.profileImage || DefaultProfileImg} /> */}
           <S.LogoutButton onClick={onLogout}>로그아웃</S.LogoutButton>
         </S.AvatarWrap>
       </S.Wrap>

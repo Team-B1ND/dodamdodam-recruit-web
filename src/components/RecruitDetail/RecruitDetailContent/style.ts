@@ -117,6 +117,8 @@ export const EtcBox = styled.div`
 
   font-size: 16px;
   font-weight: 400;
+
+  white-space: pre-line;
 `;
 
 export const PdfBox = styled.div`
@@ -161,6 +163,8 @@ export const InquiryBox = styled.div`
   border-radius: 10px;
 
   margin-bottom: 15px;
+
+  cursor: pointer;
 `;
 export const Inquiry = styled.div`
   display: flex;
